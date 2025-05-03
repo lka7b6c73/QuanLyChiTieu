@@ -59,10 +59,11 @@ gia = st.number_input("Giá (nghìn đồng):", min_value=0, step=1)
 
 if st.button("Xác nhận"):
     if mota and gia:
-        now = datetime.now()
-        thang = now.month
-        ngay = now.day
-        thoigian = now.strftime("%H:%M:%S")
+        now_utc = datetime.utcnow()
+        now_vn = now_utc + timedelta(hours=7)
+        thang = now_vn.month
+        ngay = now_vn.day
+        thoigian = now_vn.strftime("%H:%M:%S")
         worksheet.append_row([thang, ngay, thoigian, mota, boxi, gia])
         st.success(f"Đã ghi: {thang}/{ngay} {thoigian} - {mota} - {boxi} - {gia} nghìn đồng")
     else:
