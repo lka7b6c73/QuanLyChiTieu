@@ -68,7 +68,7 @@ if st.button("Xác nhận"):
         ngay_daydu = now_vn.strftime("%Y-%m-%d")  # yyyy-mm-dd
 
         # Ghi lên Google Sheets: Tháng, Ngày, Thời gian, Mô tả, Loại, Giá, Ngày đầy đủ
-        worksheet.append_row([thang, ngay, thoigian, mota, boxi, gia, ngay_daydu])
+        worksheet.append_row([thang, ngay, thoigian, mota, boxi, gia, '', ngay_daydu])
         st.success(f"Đã ghi: {thang}/{ngay} {thoigian} - {mota} - {boxi} - {gia} nghìn đồng (Ngày đầy đủ: {ngay_daydu})")
     else:
         st.error("Vui lòng nhập đầy đủ thông tin.")
