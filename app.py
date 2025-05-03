@@ -65,7 +65,8 @@ if st.button("Xác nhận"):
         thang = now_vn.month
         ngay = now_vn.day
         thoigian = now_vn.strftime("%H:%M:%S")
-        ngay_daydu = now_vn.strftime("%Y-%m-%d")  # yyyy-mm-dd
+        ngay_daydu = now_vn.strftime("%d/%m/%Y")  # ra chuỗi '03/05/2025'
+  # yyyy-mm-dd
 
         # Ghi lên Google Sheets: Tháng, Ngày, Thời gian, Mô tả, Loại, Giá, Ngày đầy đủ
         worksheet.append_row([thang, ngay, thoigian, mota, boxi, gia, '', ngay_daydu])
